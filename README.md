@@ -11,7 +11,7 @@ Steganography-Project/
 ├── Encrypted.py            # Handles embedding text into images
 ├── Decrypted.py            # Handles extracting text from images
 ├── Encrypted-Images/       # Output folder for encoded images
-   └── encod.png            # result image encoded
+   └── encoded.png            # result image encoded
 ```
 
 ---
