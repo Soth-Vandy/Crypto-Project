@@ -41,16 +41,24 @@ tool suitable for **CTF challenges**, **learning steganography**, and
 
 -   Python 3.x
 -   Pillow
+-   pyfiglet
 
 Install dependency:
 
 ``` bash
 pip install pillow
 ```
+```bash
+pip install pyfiglet
+```
 
 ------------------------------------------------------------------------
 
 ## 🚀 Usage
+
+```bash
+py main.py     #show help menu
+```
 
 ### 🔐 Hide Data
 
