@@ -1,32 +1,45 @@
+import sys
 from Encrypted import encode_image
 from Decrypted import decode_image
 import pyfiglet
+def main():
+    if len(sys.argv) < 2:
+        print("Usage:")
+        print('  Encrypt: py main.py hide "cover message "secret message" pic.png secret.png')
+        print("  Decrypt: py main.py reveal secret.png")
+        return
 
-def show_banner():
+    command = sys.argv[1].lower()
+
+    if command == "hide":
+        if len(sys.argv) != 6:
+            print('Usage: py main.py hide "cover message "secret message" pic.png secret.png')
+            return
+        cover_text = sys.argv[2]
+        payload_text = sys.argv[3]
+        image_path = sys.argv[4]
+        output_path = sys.argv[5]
+        encode_image(image_path, cover_text, payload_text, output_path)
+
+    elif command == "reveal":
+        if len(sys.argv) != 3:
+            print('Usage: py main.py reveal image.png')
+            return
+        image_path = sys.argv[2]
+        decode_image(image_path)
+
+    else:
+        print("Unknown command. Use 'hide' or 'reveal'.")
+
+def Banner():
     banner = pyfiglet.figlet_format("Image-Stega")
     print(banner)
     print("                 hide secret message in image                    ")
     print("---------------------------------------------------------------\n")
 
-def main():
-    show_banner()
-    print("1. Encrypt (hide message in image)")
-    print("2. Decrypt (extract message from image)")
-    choice = input("Choose option (1/2): ")
 
-    if choice == "1":
-        img = input("Enter input image path: ")
-        msg = input("Enter secret message: ")
-        out = input("Enter output image path (example: encoded.png): ")
-        encode_image(img, msg, out)
-
-    elif choice == "2":
-        img = input("Enter image path to decrypt: ")
-        message = decode_image(img)
-        print("Hidden message:", message)
-
-    else:
-        print("Invalid choice")
+        
 
 if __name__ == "__main__":
+    Banner()
     main()

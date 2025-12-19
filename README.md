@@ -1,78 +1,132 @@
-# Steganography Project
+# 🖼️ Image Steganography -- Cover & Payload Text
 
-A Python-based steganography tool that allows you to hide secret messages inside images and extract them later. This project includes scripts to encrypt (embed) and decrypt (extract) text from image files using basic image manipulation techniques.
+## 📌 Overview
 
----
+This project implements **image-based steganography** using the **Least
+Significant Bit (LSB)** technique. It allows hiding two types of text
+inside an image:
+
+-   **Cover Text** -- looks harmless and normal
+-   **Payload Text** -- the secret hidden message (CTF flag)
+
+The hidden data can later be **revealed from the image**, making this
+tool suitable for **CTF challenges**, **learning steganography**, and
+**security demonstrations**.
+
+------------------------------------------------------------------------
+
+## 🎯 Features
+
+-   Hide **two text files** inside an image
+-   Extract both **cover text** and **payload**
+-   Command-line based (Kali Linux friendly)
+-   Beginner-friendly CTF steganography challenge
+-   Uses **LSB on the Red channel**
+-   Supports PNG/JPG images
+
+------------------------------------------------------------------------
 
 ## 📁 Project Structure
-```
-Steganography-Project/
-├── main.py                 
-├── Encrypted.py            # Handles embedding text into images
-├── Decrypted.py            # Handles extracting text from images
-├── Encrypted-Images/       # Output folder for encoded images
-   └── encoded.png            # result image encoded
-```
 
----
+    Steganography-Project/
+    │── main.py
+    │── Encrypted.py
+    │── Decrypted.py
+    │── Reveal.py
+    │── README.md
 
-## 🚀 Features
-- Make GUI for user easy to use
-- Base on AES encryption for secret message
-
----
+------------------------------------------------------------------------
 
 ## 🛠️ Requirements
-Make sure you have **Python 3.10+** installed.
 
-Install required dependencies:
-```bash
+-   Python 3.x
+-   Pillow
+
+Install dependency:
+
+``` bash
 pip install pillow
 ```
 
----
+------------------------------------------------------------------------
 
-## ▶️ Usage
+## 🚀 Usage
 
-### **1. Encode a Message**
-Run the encryption script to hide a message inside an image:
-```bash
-python Encrypted.py
+### 🔐 Hide Data
+
+``` bash
+py main.py hide "cover message" "secret message" pic.png secret.png
 ```
-Follow the prompts to select:
-- Input image
-- Output filename
-- Message to hide
 
----
+### 🔓 Reveal Data
 
-### **2. Decode a Message**
-Run the decryption script to extract the hidden message:
-```bash
-python Decrypted.py
+``` bash
+py main.py reveal secret.png
 ```
-Choose the encoded image, and the program will reveal the hidden text.
 
----
+**Example Output**
 
-## 📌 main.py
-The `main.py` file acts as a controller that ties together the encryption and decryption components. You can modify it to add a GUI, enhance automation, or integrate advanced steganography techniques.
+``` text
+Cover Text : Hello my firend! Are you sure?
 
----
+Payload    : CTF{Mr.robot}
+```
+
+------------------------------------------------------------------------
+
+## 🧪 CTF Solver Script (Reveal.py)
+
+``` bash
+py Reveal.py
+```
+
+This script allows players to extract the hidden message without
+installing the full tool.
+
+------------------------------------------------------------------------
+
+## 🧠 How It Works
+
+-   Image converted to RGB
+-   Data stored in LSB of red channel
+-   Format:
+
+```{=html}
+<!-- -->
+```
+    COVER_TEXT<SEP>PAYLOAD_TEXT<END>
+
+------------------------------------------------------------------------
+
+## 🏴 CTF Difficulty
+
+**Level:** Easy (Beginner)
+
+------------------------------------------------------------------------
+
+## ⚠️ Limitations
+
+-   No encryption
+-   Detectable via steganalysis tools
+-   Image size limits payload size
+
+------------------------------------------------------------------------
+
+## 🔒 Future Improvements
+
+-   Encrypt payload
+-   Password-protected extraction
+-   Multi-channel encoding
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+**Soth Vandy**\
+Cybersecurity & Cryptography Project
+
+------------------------------------------------------------------------
 
 ## 📜 License
-This project is open-source. You may modify or distribute it as needed.
 
----
-
-## 🤝 Contributing
-Feel free to submit issues or pull requests to improve functionality.
-
----
-
-## 📧 Contact
-contact me at:
-```
-Sothvandy8399@gmail.com
-```
-
+Educational and CTF use only.
