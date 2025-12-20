@@ -31,6 +31,7 @@ tool suitable for **CTF challenges**, **learning steganography**, and
     │── Decrypted.py
     │── Reveal.py
     │── README.md
+    │── Requirements.txt
 
 ------------------------------------------------------------------------
 
@@ -48,7 +49,7 @@ pip install pillow
 ```bash
 pip install pyfiglet
 ```
-# OR
+# Or
 ```bash
 pip install -r requirements.txt
 ```
@@ -133,6 +134,12 @@ installing the full tool.
 
 **Soth Vandy**\
 Cybersecurity & Cryptography Project
+
+------------------------------------------------------------------------
+
+## 📬 Contact
+
+- **Email:** Sothvandy8399@gmail.com
 
 ------------------------------------------------------------------------
 
