@@ -48,6 +48,10 @@ pip install pillow
 ```bash
 pip install pyfiglet
 ```
+# OR
+```bash
+pip install -r requirements.txt
+```
 
 ------------------------------------------------------------------------
 
