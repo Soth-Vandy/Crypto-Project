@@ -17,12 +17,9 @@ tool suitable for **CTF challenges**, **learning steganography**, and
 
 ## 🎯 Features
 
--   Hide **two text files** inside an image
--   Extract both **cover text** and **payload**
--   Command-line based (Kali Linux friendly)
--   Beginner-friendly CTF steganography challenge
--   Uses **LSB on the Red channel**
--   Supports PNG/JPG images
+-   Add GUI interface
+-   Support audio and video steganography
+-   Command-line based (Kali Linux)
 
 ------------------------------------------------------------------------
 
